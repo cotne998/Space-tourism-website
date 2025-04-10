@@ -55,6 +55,10 @@ const Logo = styled.img`
 
 const Hamburger = styled.img`
   cursor: pointer;
+
+  @media only screen and (min-width: 48rem) {
+    display: none;
+  }
 `;
 
 const MobileNav = styled.nav`

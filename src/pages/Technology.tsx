@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CategoryName } from "./Destination";
 import data from "../data.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Role } from "./Crew";
 import { MemberName } from "./Crew";
 import { TextContent } from "./Destination";
@@ -19,6 +19,14 @@ export default function Technology() {
   const handleTechnology = (index: number) => {
     setCurrentIndex(index);
   };
+
+  useEffect(() => {
+    document.body.classList.add("technology-bg");
+
+    return () => {
+      document.body.classList.remove("technology-bg");
+    };
+  }, []);
 
   return (
     <Container>

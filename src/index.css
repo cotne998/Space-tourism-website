@@ -22,6 +22,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .destination-bg {
@@ -92,6 +93,10 @@ main {
     background-size: cover;
   }
 
+  .destination-bg {
+    background-image: url(/assets/destination/background-destination-tablet.jpg);
+  }
+
   header {
     background-color: rgba(255, 255, 255, 0.069);
     backdrop-filter: blur(50px);
@@ -122,6 +127,10 @@ main {
     background-size: cover;
   }
 
+  .destination-bg {
+    background-image: url(/assets/destination/background-destination-desktop.jpg);
+  }
+
   header {
     padding: 4rem 6.4rem;
     background-color: unset;
@@ -130,5 +139,9 @@ main {
 
   main {
     padding: 12.8rem 16.5rem;
+  }
+
+  .destinations-container {
+    justify-content: start;
   }
 }

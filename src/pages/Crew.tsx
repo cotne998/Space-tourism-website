@@ -26,10 +26,10 @@ export default function Crew() {
 
   return (
     <>
+      <CategoryName>MEET YOUR CREW</CategoryName>
+
       <Container>
         <MainSection>
-          <CategoryName>MEET YOUR CREW</CategoryName>
-
           <TextSection>
             <NameWrap>
               <Role>{data.crew[currentIndex].role.toUpperCase()}</Role>
@@ -64,6 +64,13 @@ const Container = styled.div`
   flex-direction: column;
   gap: 2.4rem;
   justify-content: space-between;
+
+  @media only screen and (min-width: 90rem) {
+    flex-direction: row;
+    align-items: center;
+    max-width: 144rem;
+    margin: auto;
+  }
 `;
 
 const MainSection = styled.section`
@@ -76,6 +83,15 @@ const TextSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  @media only screen and (min-width: 48rem) {
+    max-width: 51.2rem;
+    margin: auto;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    text-align: left;
+  }
 `;
 
 const Carousel = styled.div`
@@ -99,6 +115,15 @@ export const MemberName = styled.h1`
   font-weight: 400;
   color: white;
   text-align: center;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 4rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    text-align: left;
+    font-size: 5.6rem;
+  }
 `;
 
 export const Role = styled.h2`
@@ -107,6 +132,14 @@ export const Role = styled.h2`
   color: #ffffff7c;
   font-size: 1.8rem;
   font-weight: 400;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 2.8rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    text-align: left;
+  }
 `;
 
 const NameWrap = styled.div`
@@ -119,4 +152,14 @@ const CrewImg = styled.img`
   width: 27rem;
   margin-left: 50%;
   transform: translateX(-50%);
+
+  @media only screen and (min-width: 48rem) {
+    width: 44.6rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    margin: unset;
+    transform: unset;
+    width: 53.9rem;
+  }
 `;

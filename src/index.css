@@ -97,6 +97,10 @@ main {
     background-image: url(/assets/destination/background-destination-tablet.jpg);
   }
 
+  .crew-bg {
+    background-image: url(/assets/crew/background-crew-tablet.jpg);
+  }
+
   header {
     background-color: rgba(255, 255, 255, 0.069);
     backdrop-filter: blur(50px);
@@ -129,6 +133,10 @@ main {
 
   .destination-bg {
     background-image: url(/assets/destination/background-destination-desktop.jpg);
+  }
+
+  .crew-bg {
+    background-image: url(/assets/crew/background-crew-desktop.jpg);
   }
 
   header {

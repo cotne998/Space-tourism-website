@@ -9,6 +9,11 @@ const endPoints: string[] = ["Home", "Destination", "Crew", "Technology"];
 
 export default function Header() {
   const [displayMenu, setDisplayMenu] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const handleRoute = (index: number) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <>
@@ -19,6 +24,30 @@ export default function Header() {
           src={HamburgerIcon}
           alt="menu icon"
         />
+        <TabletNav>
+          <TabletUl>
+            {endPoints.map((endPoint, index) => {
+              let isActive = index === currentIndex;
+
+              return (
+                <li
+                  key={index}
+                  style={{
+                    all: "unset",
+                    borderBottom: isActive ? "3px solid white" : "",
+                    padding: "3.2rem 0",
+                  }}>
+                  <Link
+                    onClick={() => handleRoute(index)}
+                    style={{ all: "unset", cursor: "pointer" }}
+                    to={endPoint}>
+                    {endPoint.toUpperCase()}
+                  </Link>
+                </li>
+              );
+            })}
+          </TabletUl>
+        </TabletNav>
       </header>
       {displayMenu && (
         <MobileNav>
@@ -86,4 +115,28 @@ const Close = styled.img`
   right: 2.4rem;
   top: 3.2rem;
   cursor: pointer;
+`;
+
+const TabletNav = styled.nav`
+  display: none;
+
+  @media only screen and (min-width: 48rem) {
+    display: block;
+    color: white;
+    font-family: "Barlow Condensed";
+    font-size: 1.6rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    background-color: rgba(68, 68, 68, 0.23);
+    backdrop-filter: blur(30px);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const TabletUl = styled.ul`
+  display: flex;
+  gap: 4.8rem;
 `;

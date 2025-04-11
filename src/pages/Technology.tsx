@@ -82,6 +82,7 @@ const Num = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
+  cursor: pointer;
 `;
 
 const TechImg = styled.img`

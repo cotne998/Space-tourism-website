@@ -26,6 +26,21 @@ const HomeWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 11.9rem;
+
+  @media only screen and (min-width: 48rem) {
+    max-width: 51.2rem;
+    margin: auto;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    max-width: unset;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: unset;
+    margin: unset;
+    align-items: end;
+  }
 `;
 
 const InfoSection = styled.section`
@@ -33,6 +48,11 @@ const InfoSection = styled.section`
   flex-direction: column;
   gap: 2.5rem;
   text-align: center;
+
+  @media only screen and (min-width: 90rem) {
+    max-width: 54rem;
+    text-align: left;
+  }
 `;
 
 const ExploreButton = styled.button`
@@ -44,4 +64,14 @@ const ExploreButton = styled.button`
   cursor: pointer;
   background-color: white;
   border: none;
+
+  @media only screen and (min-width: 48rem) {
+    width: 27.2rem;
+    height: 27.2rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    margin: unset;
+    font-size: 3.2rem;
+  }
 `;

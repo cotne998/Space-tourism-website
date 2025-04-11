@@ -85,3 +85,50 @@ main {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 48rem) {
+  body {
+    background-image: url(/assets/home/background-home-tablet.jpg);
+    background-size: cover;
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.069);
+    backdrop-filter: blur(50px);
+    padding-bottom: unset;
+    padding-top: unset;
+  }
+
+  .home-intro {
+    font-size: 2.8rem;
+  }
+
+  .home-title {
+    font-size: 14.4rem;
+  }
+
+  main {
+    padding-top: 12rem;
+  }
+
+  .home-text-content {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 90rem) {
+  body {
+    background-image: url(/assets/home/background-home-desktop.jpg);
+    background-size: cover;
+  }
+
+  header {
+    padding: 4rem 6.4rem;
+    background-color: unset;
+    backdrop-filter: unset;
+  }
+
+  main {
+    padding: 12.8rem 16.5rem;
+  }
+}

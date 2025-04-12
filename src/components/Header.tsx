@@ -98,8 +98,8 @@ const MobileNav = styled.nav`
   top: 0;
   right: 0;
   padding-left: 3.2rem;
-  background-color: rgba(68, 68, 68, 0.23);
-  backdrop-filter: blur(30px);
+  background-color: rgba(68, 68, 68, 0.209);
+  backdrop-filter: blur(50px);
   z-index: 1000;
 `;
 

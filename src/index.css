@@ -101,6 +101,10 @@ main {
     background-image: url(/assets/crew/background-crew-tablet.jpg);
   }
 
+  .technology-bg {
+    background-image: url(/assets/technology/background-technology-tablet.jpg);
+  }
+
   header {
     background-color: rgba(255, 255, 255, 0.069);
     backdrop-filter: blur(50px);
@@ -137,6 +141,10 @@ main {
 
   .crew-bg {
     background-image: url(/assets/crew/background-crew-desktop.jpg);
+  }
+
+  .technology-bg {
+    background-image: url(/assets/technology/background-technology-desktop.jpg);
   }
 
   header {

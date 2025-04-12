@@ -82,6 +82,8 @@ const MainWrap = styled.div`
     align-items: center;
     justify-content: space-between;
     padding-bottom: 30rem;
+    max-width: 111rem;
+    margin: auto;
   }
 `;
 

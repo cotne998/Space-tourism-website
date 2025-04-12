@@ -65,6 +65,20 @@ const ExploreButton = styled.button`
   background-color: white;
   border: none;
 
+  &:hover {
+    box-shadow: 0 0 2rem rgba(255, 255, 255, 0.6),
+      0 0 4rem rgba(255, 255, 255, 0.4);
+    transform: scale(1.1); /* Slightly enlarges the button */
+    transition: 0.2s;
+  }
+
+  &:active {
+    box-shadow: 0 0 2rem rgba(255, 255, 255, 0.298),
+      0 0 4rem rgba(255, 255, 255, 0.231);
+    transform: scale(0.95); /* Slightly enlarges the button */
+    transition: 0.2s;
+  }
+
   @media only screen and (min-width: 48rem) {
     width: 27.2rem;
     height: 27.2rem;

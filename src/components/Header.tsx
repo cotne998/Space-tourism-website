@@ -36,6 +36,7 @@ export default function Header() {
                     all: "unset",
                     borderBottom: isActive ? "3px solid white" : "",
                     padding: "3.2rem 0",
+                    transition: "0.2s",
                   }}>
                   <Link
                     onClick={() => handleRoute(index)}

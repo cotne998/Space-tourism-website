@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import LogoIcon from "/assets/shared/logo.svg";
 import HamburgerIcon from "/assets/shared/icon-hamburger.svg";
 import { Link } from "react-router-dom";
@@ -9,10 +9,19 @@ const endPoints: string[] = ["Home", "Destination", "Crew", "Technology"];
 
 export default function Header() {
   const [displayMenu, setDisplayMenu] = useState<boolean>(false);
+  const [isClosing, setIsClosing] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleRoute = (index: number) => {
     setCurrentIndex(index);
+  };
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setDisplayMenu(false);
+      setIsClosing(false);
+    }, 300); // უნდა ემთხვეოდეს animation-ს
   };
 
   return (
@@ -50,9 +59,10 @@ export default function Header() {
           </TabletUl>
         </TabletNav>
       </header>
+
       {displayMenu && (
-        <MobileNav>
-          <Close onClick={() => setDisplayMenu(false)} src={CloseIcon} />
+        <MobileNav className={isClosing ? "closing" : ""}>
+          <Close onClick={handleClose} src={CloseIcon} />
           <ul
             style={{
               display: "flex",
@@ -64,7 +74,7 @@ export default function Header() {
               return (
                 <MobileList key={endPoint} style={{ color: "white" }}>
                   <Link
-                    onClick={() => setDisplayMenu(false)}
+                    onClick={handleClose}
                     style={{ all: "unset", cursor: "pointer" }}
                     to={`/${endPoint}`}>
                     {endPoint.toUpperCase()}
@@ -79,6 +89,8 @@ export default function Header() {
   );
 }
 
+// Styled Components
+
 const Logo = styled.img`
   width: 4rem;
 `;
@@ -91,6 +103,24 @@ const Hamburger = styled.img`
   }
 `;
 
+const MenuAnimationOpen = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+const MenuAnimationClose = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`;
+
 const MobileNav = styled.nav`
   height: 100vh;
   width: 25rem;
@@ -98,9 +128,15 @@ const MobileNav = styled.nav`
   top: 0;
   right: 0;
   padding-left: 3.2rem;
-  background-color: rgba(68, 68, 68, 0.209);
+  background-color: rgba(68, 68, 68, 0.517);
   backdrop-filter: blur(50px);
   z-index: 1000;
+
+  animation: ${MenuAnimationOpen} 0.3s forwards;
+
+  &.closing {
+    animation: ${MenuAnimationClose} 0.3s forwards;
+  }
 `;
 
 const MobileList = styled.li`
